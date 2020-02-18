@@ -21,7 +21,7 @@ class: p-0,m-0,vcenter
   .mt-xxxl[
 * Software architect and craftsman
 * @Bob_the_mighty on Twitter
-* Slides github.com/bobthemighty
+* Slides https://github.com/bobthemighty/talk-eventbridge-is-so-hot
     ]
   ]
 ]
