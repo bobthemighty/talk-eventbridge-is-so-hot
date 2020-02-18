@@ -4,7 +4,7 @@ from diagrams.aws.compute import Lambda
 from diagrams.aws.integration import Eventbridge
 from diagrams.aws.storage import S3
 
-with Diagram("Event capture"):
+with Diagram("Event capture", show=False):
     with Cluster("Production Account"):
         prod_lambdas = [Lambda("Func"), Lambda("Func"), Lambda("Func")]
         prod_bus = Eventbridge("Default")

@@ -7,7 +7,7 @@ from diagrams.aws.storage import S3
 from diagrams.aws.analytics import Kinesis, KinesisDataFirehose
 
 
-with Diagram("Lambda Pinball"):
+with Diagram("Lambda Pinball", show=False):
 
     bucket = S3("bucket")
     ddb = Dynamodb("database")

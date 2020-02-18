@@ -7,7 +7,7 @@ from diagrams.aws.storage import S3
 from diagrams.aws.analytics import Kinesis, KinesisDataFirehose
 
 
-with Diagram("Kinesis Integration", direction="LR"):
+with Diagram("Kinesis Integration", direction="LR", show=False):
 
    with Cluster("Sources"):
      producers_l = [APIGateway("Source"), Lambda("Source")]

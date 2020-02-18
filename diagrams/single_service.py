@@ -7,7 +7,7 @@ from diagrams.aws.storage import S3
 from diagrams.aws.analytics import Kinesis, KinesisDataFirehose
 
 
-with Diagram("Fake services", direction="LR"):
+with Diagram("Fake services", direction="LR", show=False):
 
    orchestrator = Compute("Orchestrator service")
 

@@ -7,7 +7,7 @@ from diagrams.aws.storage import S3
 from diagrams.aws.analytics import Kinesis, KinesisDataFirehose
 
 
-with Diagram("SQS Integration", direction="LR"):
+with Diagram("SQS Integration", direction="LR", show=False):
 
    queue = SQS("Queue")
    apig = APIGateway("Producer (http post)")

@@ -5,7 +5,7 @@ from diagrams.aws.integration import Eventbridge
 from diagrams.aws.network import APIGateway
 from diagrams.aws.storage import S3
 
-with Diagram("Message Broker"):
+with Diagram("Message Broker", show=False):
     with Cluster("Event Processors"):
         with Cluster("System A", direction="TB") as sys_a:
             apig = APIGateway("webhook")

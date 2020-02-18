@@ -7,7 +7,7 @@ from diagrams.aws.storage import S3
 from diagrams.aws.analytics import Kinesis, KinesisDataFirehose
 
 
-with Diagram("SNS Integration", direction="LR"):
+with Diagram("SNS Integration", direction="LR", show=False):
 
    apig = APIGateway("Producer (http post)")
    topic = SNS("Topic")

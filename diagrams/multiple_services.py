@@ -7,7 +7,7 @@ from diagrams.aws.storage import S3
 from diagrams.aws.analytics import Kinesis, KinesisDataFirehose
 
 
-with Diagram("A Service", direction="LR"):
+with Diagram("A Service", direction="LR", show=False):
 
      with Cluster("Service Boundary"):
         orchestrator = Compute("Orchestrator")
