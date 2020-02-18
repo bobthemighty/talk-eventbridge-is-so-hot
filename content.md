@@ -400,10 +400,10 @@ We can put together this map with our experts, and you'll notice the events have
 
 ## Event-Driven Architecture and Domain Driven Design
 
-We use _domain events_ to model the steps in a workflow, and translate those directly to EventBridge events.
+We use .serif[domain events] to model the steps in a workflow, and translate those directly to EventBridge events.
 
-* Within a service, teams use _any integration technique they like_.
-* Between services, teams are encouraged to _prefer events for integration_.
+* Within a service, teams use .serif[any integration technique they like].
+* Between services, teams are encouraged to .serif[prefer events for integration].
 
 ---
 # How we use Eventbridge at Cazoo
@@ -569,7 +569,7 @@ We're looking at anomaly detection over this dataset so that we can raise alarms
 
 ## Telemetry
 
-As a _data-driven organisation_ we need to provide _high-quality, near-realtime data_ for our analytics teams. EventBridge allows us to ship _coarse-grained data events_ that analysts can capture via Kinesis Firehose.
+As a .serif[data-driven organisation] we need to provide .serif[high-quality, near-realtime data] for our analytics teams. EventBridge allows us to ship .serif[coarse-grained data events] that analysts can capture via Kinesis Firehose.
 
 ???
 
