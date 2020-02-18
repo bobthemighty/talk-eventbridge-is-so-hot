@@ -3,7 +3,7 @@ EventBridge
 
 This talk was written for Serverless London in Feb 2020.
 
-Slides are rendered with the [1-2-3 remark theme][1] and contain diagrams rendered with [Mingrammer's "diagrams" library][2].
+Slides are rendered with the [1-2-3 remark theme][1] and contain diagrams rendered with Mingrammer's [diagrams][2] library.
 
 To serve the slides, run a webserver rooted at the top level directory, eg. if the talk is checked out to /tmp/foo then
 
