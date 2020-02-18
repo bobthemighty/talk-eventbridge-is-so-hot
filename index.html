@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>EventBridge</title>
+    <meta charset="utf-8" />
+    <meta
+      name="viewport"
+      content="user-scalable=no,initial-scale=1,maximum-scale=1,minimum-scale=1,width=device-width"
+    />
+    <link rel="stylesheet" type="text/css" href="./css/quasar.min.css" />
+    <link rel="stylesheet" type="text/css" href="./css/pure-min.css" />
+    <link rel="stylesheet" type="text/css" href="./css/spaces.css" />
+    <link rel="stylesheet" type="text/css" href="./css/typo.css" />
+    <link rel="stylesheet" type="text/css" href="./css/devices.min.css" />
+    <link rel="stylesheet" type="text/css" href="./css/gh-fork-ribbon.css" />
+    <link rel="stylesheet" type="text/css" href="./css/nord-dark.css" />
+    <link rel="stylesheet" type="text/css" href="./css/nord-light.css" />
+    <link rel="stylesheet" type="text/css" href="./css/font-nord.css" />
+    <link rel="stylesheet" type="text/css" href="./css/bg-nord.css" />
+    <link rel="stylesheet" type="text/css" href="./css/font-open-color.css" />
+    <link rel="stylesheet" type="text/css" href="./css/bg-open-color.css" />
+    <link rel="stylesheet" type="text/css" href="./css/material-icons.css" />
+    <link rel="stylesheet" type="text/css" href="./css/abs-layout.css" />
+    <link rel="stylesheet" type="text/css" href="./css/text-rect.css" />
+    <link rel="stylesheet" type="text/css" href="./css/text-circle.css" />
+    <link rel="stylesheet" type="text/css" href="./css/card.css" />
+    <link rel="stylesheet" type="text/css" href="./css/lines.css" />
+    <link rel="stylesheet" type="text/css" href="./css/filters.css" />
+    <link rel="stylesheet" type="text/css" href="./fonts/remixicon.css" />
+    <link rel="stylesheet" type="text/css" href="./css/style.css" />
+  </head>
+  <body>
+    <textarea id="source">
+   </textarea>
+
+    <script src="js/remark.min.js"></script>
+    <script src="js/vue.js"></script>
+    <script src="js/quasar.umd.min.js"></script>
+    <script>
+      // 预处理：去掉每行开头的空格，否则超过2层锁紧的类会导致解析出BUG
+      var targetTextArea = document.getElementById("source");
+      var lines = targetTextArea.innerHTML.split("\n");
+      targetTextArea.innerHTML = lines.map(line => line.replace(/^(?!\s+[\-|0-9])\s+/, "")).join("\n");
+
+      var slideshow = remark.create({
+        ratio: "4:3", // window ratio
+        // arta, ascetic, dark, default, far, github, googlecode, idea,
+        // ir-black, magula, monokai, rainbow, solarized-dark, solarized-light,
+        // sunburst, tomorrow, tomorrow-night-blue, tomorrow-night-bright,
+        // tomorrow-night, tomorrow-night-eighties, vs, zenburn.
+        highlightStyle: "github",
+        sourceUrl: 'content.md',
+        highlightLines: true,
+        countIncrementalSlides: false, // whether the incremental content count as one page
+        //slideNumberFormat: "", // If this parameter is set to "", the page number is not displayed
+        navigation: {
+          scroll: false, // Page turning with mouse wheel is allowed
+          touch: true, // Is it allowed to scroll back and forth by clicking on the left or right side of the screen
+          click: false // Allow the mouse to click on the left or right side of the screen to turn back and forth
+        }
+      });
+
+      // 初始化 VUE
+      for (var el of document.querySelectorAll(".vue")) {
+        new Vue({
+          el: el
+        });
+      }
+
+      // 初始化可点击预览的卡片
+      var preview_win_cards = document.querySelectorAll(".preview-win");
+      for (var card of preview_win_cards) {
+        (clickedCard => {
+          clickedCard.addEventListener("click", e => {
+            var img = clickedCard.querySelector("img");
+            if (img) {
+              window.open(img.src);
+            }
+          });
+        })(card);
+      }
+
+      // 背景色变化兼容 F11 全屏
+      function isFullScreen() {
+        return window.fullScreen || (window.innerWidth == screen.width && window.innerHeight == screen.height);
+      }
+
+      window.addEventListener("resize", () => {
+        if (isFullScreen()) {
+          document.body.style["background-color"] = "#000";
+        } else {
+          document.body.style["background-color"] = "#d7d8d2";
+        }
+      });
+    </script>
+  </body>
+</html>

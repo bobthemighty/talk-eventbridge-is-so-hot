@@ -1,0 +1,18 @@
+* Services and Boundaries
+** Function != Microservice
+** Business Capabilities and Autonomous Components
+** Bounded Contexts
+** Conway's Law
+** Anti-Patterns
+** Messaging for Inter-Service Communication
+* EventBridge to the Rescue
+** What is EventBridge?
+** Why is it better than X?
+** EventBridge as Universal Translator
+** Content-based routing
+* How we use it at Cazoo
+** Event modeling techniques
+** Documentation Driven Design
+** The Event Relay
+** Validate-on-send
+** Telemetry
